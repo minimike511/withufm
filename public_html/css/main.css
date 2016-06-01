@@ -227,7 +227,7 @@ a:hover {
 .welcome-page-left, 
 .welcome-page-right {
   position: absolute;
-  top: 50%;
+  top: 250px;
   margin-top:-35px;
   font-size: 57px;
   z-index: 10;

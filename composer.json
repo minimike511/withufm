@@ -1,12 +1,12 @@
 {
-  "name": "withufm/package_name",
+  "name": "withufm",
   "description": "description_text",
   "minimum-stability": "stable",
-  "license": "proprietary",
+  "license": "property of Developers' Foundation",
   "authors": [
     {
-      "name": "author's name",
-      "email": "email@example.com"
+      "name": "michael park",
+      "email": "Michael@developersfoundation.ca"
     }
   ]
 }

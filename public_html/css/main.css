@@ -12,12 +12,25 @@ body {
 }
 
 body,
-.preloader {
-    background: -webkit-linear-gradient(90deg, #4F2683 15%, #DBD5A4 85%); /* Chrome 10+, Saf5.1+ */
-    background: -moz-linear-gradient(90deg, #4F2683 15%, #DBD5A4 85%); /* FF3.6+ */
-    background: -ms-linear-gradient(90deg, #4F2683 15%, #DBD5A4 85%); /* IE10 */
-    background: -o-linear-gradient(90deg, #4F2683 15%, #DBD5A4 85%); /* Opera 11.10+ */
-    background: linear-gradient(90deg, #4F2683 15%, #DBD5A4 85%); /* W3C */
+#backGround{
+    background: url(../images/WithufmBG.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: #cfcfcf;
+}
+ .bgBlur{
+    content: '';
+    position: absolute;
+    top: 0; left:0; right:0; bottom:0;
+    background: inherit;
+    z-index:-1;
+    filter: blur(5px);
+    -webkit-filter: blur(6px);
+    -moz-filter: blur(6px);
+    -o-filter: blur(6px);
+    -ms-filter: blur(6px);
 }
 
 h1, h2, h3, h4, h5, h6 {

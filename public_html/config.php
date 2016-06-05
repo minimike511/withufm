@@ -1,5 +1,5 @@
 <?
-ini_set("display_errors","on");
+//ini_set("display_errors","on");
 if(!isset($dbh)){
  session_start();
  date_default_timezone_set("UTC"); // Set Time Zone

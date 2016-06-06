@@ -61,8 +61,8 @@ $(document).ready(function () {
 				subject = "Message from " + sendFrom + " " + document.getElementById("name").value,
 				msg = document.getElementById("message").value,
 				msgHTML = "<em>" + document.getElementById("message").value + "<em>",
-				fromName = "My Portfolio Web " + document.getElementById("name").value,
-				toName = "Michael Park";
+				fromName = "WithUFM Web " + document.getElementById("name").value,
+				toName = "WithUFM";
 
 			var sendData = JSON.stringify({
 				'sendFrom': sendFrom,

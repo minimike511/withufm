@@ -42,3 +42,64 @@ jQuery(function($) {
 	});
 
 });
+/*
+ * e-mail
+ * */
+$(document).ready(function () {
+	$('form.form-email').submit(function (e) {
+		if (e.preventDefault) e.preventDefault();
+		else e.returnValue = false;
+
+		var thisForm = $(this).closest('form.form-email');
+
+		if (thisForm.attr('data-form-type').indexOf("nob") > -1) {
+			// Nob form
+
+			// document.getElements
+			var sendFrom = document.getElementById("email").value,
+				sendTo = "michael511.mp@gmail.com",
+				subject = "Message from " + sendFrom + " " + document.getElementById("name").value,
+				msg = document.getElementById("message").value,
+				msgHTML = "<em>" + document.getElementById("message").value + "<em>",
+				fromName = "My Portfolio Web " + document.getElementById("name").value,
+				toName = "Michael Park";
+
+			var sendData = JSON.stringify({
+				'sendFrom': sendFrom,
+				'fromName': fromName,
+				'sendTo': sendTo,
+				'toName': toName,
+				'subject': subject,
+				'msg': msg,
+				'msgHTML': msgHTML
+			});
+
+			$.ajax({
+				url: 'email/email.php',
+				crossDomain: false,
+				data: sendData,
+				method: "POST",
+				cache: false,
+				dataType: 'json',
+				contentType: 'application/json; charset=utf-8',
+				success: function (data) {
+					// Deal with JSON
+					console.log(data);
+					var returnData = JSON.parse(data);
+					if (returnData.success) {
+						// Throw success msg
+						document.getElementById("Submit").disabled = false;
+
+					} else {
+						// Throw error message
+						document.getElementById("Submit").disabled = false;
+					}
+				},
+				error: function (error) {
+					console.log(error);
+					// Throw error message
+				}
+			});
+		}
+	});
+});

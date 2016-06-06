@@ -2,11 +2,15 @@
   "name": "withufm",
   "description": "description_text",
   "minimum-stability": "stable",
+  "require": {
+    "sendgrid/sendgrid": "4.0.4"
+  },
   "license": "property of Developers' Foundation",
   "authors": [
     {
       "name": "michael park",
       "email": "Michael@developersfoundation.ca"
     }
-  ]
+  ],
+  "minimum-stability": "stable"
 }

@@ -58,7 +58,7 @@ $(document).ready(function () {
 			// document.getElements
 			var sendFrom = document.getElementById("email").value,
 				sendTo = "michael511.mp@gmail.com",
-				subject = "Message from " + sendFrom + " " + document.getElementById("name").value,
+				subject = "Message from " + document.getElementById("name").value + "Subject: " + document.getElementById("subject").value,
 				msg = document.getElementById("message").value,
 				msgHTML = "<em>" + document.getElementById("message").value + "<em>",
 				fromName = "WithUFM Web " + document.getElementById("name").value,

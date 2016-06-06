@@ -26,6 +26,7 @@ jQuery(function($) {
 		menuItems.removeClass('active').eq(curIndex).addClass('active');
 	});
 
+	/**
 	//Contact Form
 	var form = $('#contact-form');
 	form.submit(function(event){
@@ -39,7 +40,7 @@ jQuery(function($) {
 		}).done(function(data){
 			form_status.find('.form-status-content').html('<p class="text-success">Thank you for contact us. As early as possible  we will contact you</p>').delay(3000).fadeOut();
 		});
-	});
+	});**/
 
 });
 /*
@@ -58,10 +59,10 @@ $(document).ready(function () {
 			// document.getElements
 			var sendFrom = document.getElementById("email").value,
 				sendTo = "michael511.mp@gmail.com",
-				subject = "Message from " + document.getElementById("name").value + "Subject: " + document.getElementById("subject").value,
+				subject = "Message from: " + document.getElementById("name").value + " ,Subject: " + document.getElementById("subject").value,
 				msg = document.getElementById("message").value,
 				msgHTML = "<em>" + document.getElementById("message").value + "<em>",
-				fromName = "WithUFM Web " + document.getElementById("name").value,
+				fromName = "WithUFM Web",
 				toName = "WithUFM";
 
 			var sendData = JSON.stringify({
@@ -92,9 +93,7 @@ $(document).ready(function () {
 					var returnData = JSON.parse(data);
 					if (returnData.success) {
 						// Throw success msg
-						thisForm.find('.form-status-content').html('<p class="text-success">Thank you for contact us. As early as possible  we will contact you</p>').delay(3000).fadeOut();
 						document.getElementById("Submit").disabled = false;
-
 					} else {
 						// Throw error message
 						document.getElementById("Submit").disabled = false;
@@ -104,7 +103,7 @@ $(document).ready(function () {
 					console.log(error);
 					// Throw error message
 				}
-			});
+			});thisForm.find('.form-status-content').html('<p class="text-success">Thank you for contact us.</p>').delay(3000).fadeOut();
 		}
 	});
 });

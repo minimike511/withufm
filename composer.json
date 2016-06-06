@@ -1,6 +1,6 @@
 {
   "name": "withufm",
-  "description": "description_text",
+  "description": "WithUFM Radio Web",
   "minimum-stability": "stable",
   "require": {
     "sendgrid/sendgrid": "4.0.4"

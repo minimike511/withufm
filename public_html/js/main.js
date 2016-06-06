@@ -82,12 +82,17 @@ $(document).ready(function () {
 				cache: false,
 				dataType: 'json',
 				contentType: 'application/json; charset=utf-8',
+
+				beforeSend: function(){
+					thisForm.find('.form-status-content').html('<p><i class="fa fa-spinner fa-spin"></i> Email is sending...</p>').fadeIn();
+				},
 				success: function (data) {
 					// Deal with JSON
 					console.log(data);
 					var returnData = JSON.parse(data);
 					if (returnData.success) {
 						// Throw success msg
+						thisForm.find('.form-status-content').html('<p class="text-success">Thank you for contact us. As early as possible  we will contact you</p>').delay(3000).fadeOut();
 						document.getElementById("Submit").disabled = false;
 
 					} else {

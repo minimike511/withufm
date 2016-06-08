@@ -242,6 +242,11 @@ a:hover {
     margin-bottom: 100px;
 }
 
+.main-header {
+    font-size: 64px;
+    line-height: 64px;
+}
+
 .entry-title {
     font-size: 24px;
     line-height: 30px;

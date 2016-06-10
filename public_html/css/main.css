@@ -5,6 +5,7 @@
 **************************/
 
 body {
+    padding-top: 10%;
     font-family: 'Dosis', sans-serif;
     font-size: 16px;
     line-height: 26px;
@@ -181,7 +182,7 @@ a:hover {
 
 #page-slider > .carousel-inner,
 #page-slider .item > .container {
-    height: 900px;
+    min-height: 900px;
 }
 
 #page-slider .item > .container {

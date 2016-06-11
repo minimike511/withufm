@@ -52,18 +52,24 @@ $(document).ready(function () {
 		else e.returnValue = false;
 
 		var thisForm = $(this).closest('form.form-email');
+		var submitButton = thisForm.find('button');
+		submitButton.prop("disabled", true);
+		var emailField = thisForm.find('.form-input-email');
+		var nameField = thisForm.find('.form-input-name');
+		var messageField = thisForm.find('.form-input-message');
+		var subbjectField = thisForm.find('.form-input-subject');
 
 		if (thisForm.attr('data-form-type').indexOf("nob") > -1) {
 			// Nob form
 
 			// document.getElements
-			var sendFrom = document.getElementById("email").value,
+			var sendFrom = emailField.val(),
 				sendTo = "michael511.mp@gmail.com",
-				subject = "Message from: " + document.getElementById("name").value + " ,Subject: " + document.getElementById("subject").value,
-				msg = document.getElementById("message").value,
-				msgHTML = "<em>" + document.getElementById("message").value + "<em>",
-				fromName = "WithUFM Web",
-				toName = "WithUFM";
+				subject = "Message from: " + nameField.val() + " ,Subject: " + subbjectField.val(),
+				msg = messageField.val(),
+				msgHTML = "<em>" + messageField.val()+ "<em>",
+				fromName = "WithUFM Web Contact Us: " + nameField.val(),
+				toName = "WithUFM Web";
 
 			var sendData = JSON.stringify({
 				'sendFrom': sendFrom,
@@ -83,27 +89,35 @@ $(document).ready(function () {
 				cache: false,
 				dataType: 'json',
 				contentType: 'application/json; charset=utf-8',
-
-				beforeSend: function(){
-					thisForm.find('.form-status-content').html('<p><i class="fa fa-spinner fa-spin"></i> Email is sending...</p>').fadeIn();
-				},
+				
 				success: function (data) {
 					// Deal with JSON
 					console.log(data);
 					var returnData = JSON.parse(data);
+					submitButton.removeClass("btn-primary");
 					if (returnData.success) {
 						// Throw success msg
-						document.getElementById("Submit").disabled = false;
+						emailField.val("");
+						nameField.val("");
+						messageField.val("");
+						submitButton.html("Received");
+						submitButton.addClass("btn-success");
 					} else {
 						// Throw error message
-						document.getElementById("Submit").disabled = false;
+						submitButton.html("Sorry an error occured1");
+						submitButton.addClass("btn-danger");
 					}
+					submitButton.prop("disabled", false);
 				},
 				error: function (error) {
 					console.log(error);
 					// Throw error message
+					submitButton.html("Sorry an error occured2");
+					submitButton.removeClass("btn-primary");
+					submitButton.addClass("btn-danger");
+					submitButton.prop("disabled", false);
 				}
-			});thisForm.find('.form-status-content').html('<p class="text-success">Thank you for contact us.</p>').delay(3000).fadeOut();
+			});
 		}
 	});
 });

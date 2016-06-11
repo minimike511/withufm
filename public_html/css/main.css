@@ -5,7 +5,6 @@
 **************************/
 
 body {
-    padding-top: 10%;
     font-family: 'Dosis', sans-serif;
     font-size: 16px;
     line-height: 26px;
@@ -13,7 +12,7 @@ body {
 }
 
 body,
-#backGround{
+#backGround {
     background: url(../images/WithufmBG.png);
     background-size: cover;
     background-position: center;
@@ -182,7 +181,7 @@ a:hover {
 
 #page-slider > .carousel-inner,
 #page-slider .item > .container {
-    min-height: 900px;
+    min-height: 600px;
 }
 
 #page-slider .item > .container {
@@ -227,7 +226,7 @@ a:hover {
 .welcome-page-left,
 .welcome-page-right {
     position: absolute;
-    top: 450px;
+    top: 350px;
     margin-top: -35px;
     font-size: 57px;
     z-index: 10;
@@ -237,10 +236,10 @@ a:hover {
     font-size: 64px;
     line-height: 64px;
     border: 0;
-    padding: 0;
+    padding: 50px;
     margin-top: 0;
     font-weight: 700;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 
 .main-header {
@@ -367,4 +366,16 @@ input:not([type]), input[type=text], input[type=password], input[type=email], in
     box-shadow: none;
     box-sizing: content-box;
     transition: all .3s;
+}
+.mobileHide {
+    display: inline;
+}
+
+/* Smartphone Portrait and Landscape */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px) {
+    .mobileHide {
+        display: none;
+    }
 }
